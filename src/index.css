@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-family: "Raleway", sans-serif;
+  --breakpoint-3xl: 120rem;
+  --color-purple-deep: #AE35D9;
+  --color-purple-light: #E35EEC;
+  --color-yellow: #FFE500;
+  --color-gray-deep: #F1F1F1;
+  --color-gray-light: #FAFAFA;
+  /* ... */
+}
+
+@layer base {
+  h1 {
+    font-size: var(--text-2xl);
+  }
+  h2 {
+    font-size: var(--text-xl);
+  }
+}
+
+@layer components {
+  .card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: --spacing(6);
+    box-shadow: var(--shadow-xl);
+  }
+}
