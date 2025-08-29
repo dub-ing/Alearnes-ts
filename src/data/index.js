@@ -1,15 +1,38 @@
 import logo from "./images/logo.png";
+import footerLogo from "./images/footerLogo.png";
 import aboutImg from "./images/aboutImg.png";
 import mapIcon from './images/mapIcon.png'
 import leaderboardIcon from './images/leaderboardIcon.png'
 import clockIcon from './images/clockIcon.png'
 import historyIcon from './images/historyIcon.png'
 import communityIcon from './images/communityIcon.png'
+import whatsappImg from './images/whatsappImg.png'
+import instagramImg from './images/instagramImg.png'
+import telegramImg from './images/telegramImg.png'
+import whatsappIcon from './images/whatsappIcon.png'
+import instagramIcon from './images/instagramIcon.png'
+import telegramIcon from './images/telegramIcon.png'
+import callIcon from './images/callIcon.png'
 import kenny from './images/kenny.png'
 import ayomide from './images/ayomide.png'
 import chioma from './images/chioma.png'
 
-export { logo, aboutImg, mapIcon, leaderboardIcon, clockIcon, historyIcon };
+export {
+  logo,
+  footerLogo,
+  aboutImg,
+  mapIcon,
+  leaderboardIcon,
+  clockIcon,
+  historyIcon,
+  whatsappImg,
+  instagramImg,
+  telegramImg,
+  whatsappIcon,
+  instagramIcon,
+  telegramIcon,
+  callIcon
+};
 export const infographics = [
   {
     img: mapIcon,
@@ -43,18 +66,21 @@ export const testimonials = [
   {
     img: kenny,
     name: "Kenny Timothy",
+    rating: 4,
     comment:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur fugit aliquid neque, accusantium praesentium aliquam.",
   },
   {
     img: ayomide,
     name: "Ayomide Banire",
+    rating: 5,
     comment:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur fugit aliquid neque, accusantium praesentium aliquam.",
   },
   {
     img: chioma,
     name: "Chioma Blessing",
+    rating: 5,
     comment:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur fugit aliquid neque, accusantium praesentium aliquam.",
   },
