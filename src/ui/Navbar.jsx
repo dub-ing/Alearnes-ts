@@ -7,7 +7,7 @@ import {
   MdPerson,
   MdSpaceDashboard,
 } from "react-icons/md";
-import { logo } from "../data/index";
+import { logoDark } from "../data/index";
 import Button from "./Button";
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <div>
       <div class="max-sm:hidden w-full py-4 px-9 flex justify-between items-center">
-        <img src={logo} alt="Alearners logo" width={125} height={60} />
+        <img src={logoDark} alt="Alearners logo" width={125} height={60} />
         <ul class="flex justify-between gap-5 items-center text-white">
           <li class="text-[16px] font-500">
             <a href="#home">Home</a>
@@ -36,13 +36,13 @@ function Navbar() {
       </div>
       {/* mobile nav menu */}
       <div class="flex justify-between items-center py-4 px-5 sm:hidden">
-        <img src={logo} alt="Alearners logo" width={60} />
+        <img src={logoDark} alt="Alearners logo" width={60} />
         <HiOutlineMenu size={24} color="#f1f1f1" onClick={handleMenu} />
       </div>
       {showMenu && (
         <div class="w-[95%] top-0 bottom-0 right-0 bg-purple-deep absolute z-10 px-3.5 py-3.5 flex flex-col gap-6 sm:hidden">
           <div class="flex justify-between items-center">
-            <img src={logo} alt="Alearners logo" width={60} />
+            <img src={logoDark} alt="Alearners logo" width={60} />
             <HiOutlineX size={24} color="#f1f1f1" onClick={handleMenu} />
           </div>
           <ul class="w-full flex flex-col justify-between text-white gap-3">
