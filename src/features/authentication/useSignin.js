@@ -8,7 +8,7 @@ export function useSignin() {
     mutationFn: ({ email, password }) => signinApi({ email, password }),
     onSuccess: (data) => {
       console.log(data);
-      // navigate('/dashboard')
+      navigate('/')
     },
     onError: (err) => {
       console.log("Error", err);

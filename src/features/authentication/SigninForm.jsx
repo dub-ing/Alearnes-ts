@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { signin } from "../../services/apiAuth";
 import { useSignin } from "./useSignin";
+import Title from "../../ui/Title";
 
 function SigninForm() {
   const [email, setEmail] = useState("mrKrabs");
@@ -16,7 +17,7 @@ function SigninForm() {
 
   return (
     <div class="mt-5 mx-auto px-2 w-100 h-[60vh] flex flex-col">
-      <h1 class="text-3xl font-700 leading-7 text-[#0f0f0f">Sign In</h1>
+      <Title>Sign In</Title>
       <form action="" class="my-3 flex flex-col justify-between h-full">
         <div>
           <div class="w-full my-6">
@@ -59,11 +60,11 @@ function SigninForm() {
         </div>
         <div class="text-center">
           <button
-            class="py-3 px-8 text-xs font-700 bg-[#f1f1f1] rounded-lg cursor-pointer"
+            class="py-3 px-8 text-xs font-700 bg-[#f1f1f1] rounded-lg cursor-pointer disabled:cursor-not-allowed"
             onClick={handleSubmit}
             disabled={isLoading}
           >
-            Log In
+            {isLoading ? "Loggin In" : "Log in"}
           </button>
         </div>
       </form>
