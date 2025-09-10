@@ -14,7 +14,7 @@ export function useSignup() {
     onSuccess: (user) => {
       console.log(user);
       toast.success("Account created successfully");
-      navigate("/");
+      navigate("/welcome");
     },
     onError: (error) => {
       console.log(error);
@@ -22,5 +22,5 @@ export function useSignup() {
     },
   });
 
-  return {signup, isPending}
+  return {signup, isPending, error}
 }
