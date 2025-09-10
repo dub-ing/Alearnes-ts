@@ -1,4 +1,5 @@
 import logo from "./images/logo.png";
+import logoDark from "./images/logoDark.png";
 import footerLogo from "./images/footerLogo.png";
 import aboutImg from "./images/aboutImg.png";
 import mapIcon from './images/mapIcon.png'
@@ -19,6 +20,7 @@ import chioma from './images/chioma.png'
 
 export {
   logo,
+  logoDark,
   footerLogo,
   aboutImg,
   mapIcon,
