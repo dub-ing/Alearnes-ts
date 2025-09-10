@@ -8,7 +8,7 @@ function SignupFormB({ setFormData, formData }) {
   const [selectedCourse, setSelectedCourse] = useState([]);
   const {signup, isPending: isLoading} = useSignup()
   const { register, handleSubmit } = useForm();
-  const minCourse = 0;
+  // const minCourse = 0;
 
   function handleChange(event) {
     const course = event.target.value;
@@ -46,6 +46,8 @@ function SignupFormB({ setFormData, formData }) {
     };
 
     signup({email, password})
+    console.log(newStudent);
+    
   }
   return (
     <div class="mt-5 mx-auto px-2 w-100 h-[90vh] flex flex-col">

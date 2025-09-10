@@ -4,11 +4,15 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 export function useSignin() {
   const navigate = useNavigate();
-  const { mutate: signin, isPending, error } = useMutation({
+  const {
+    mutate: signin,
+    isPending,
+    error,
+  } = useMutation({
     mutationFn: ({ email, password }) => signinApi({ email, password }),
     onSuccess: (data) => {
       console.log(data);
-      navigate('/')
+      navigate("/welcome");
     },
     onError: (err) => {
       console.log("Error", err);
@@ -16,5 +20,5 @@ export function useSignin() {
     },
   });
 
-  return {signin, isPending, error}
+  return { signin, isPending, error };
 }
