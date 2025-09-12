@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useSignup } from "./useSignUp";
 
-function SignupFormB({ setFormData, formData }) {
+function SignupFormB({ formData }) {
   const [selectedCourse, setSelectedCourse] = useState([]);
   const {signup, isPending: isLoading} = useSignup()
   const { register, handleSubmit } = useForm();
@@ -19,35 +19,16 @@ function SignupFormB({ setFormData, formData }) {
     }
   }
   function onSubmit(data) {
-    // if (selectedCourse.length == minCourse) {
-    //   alert('select a course')
-    // }
-    setFormData({ ...formData, ...data, selectedCourse });
-    console.log(formData);
-    const {
-      firstname,
-      lastname,
-      username,
-      email,
-      level,
-      department,
-      selectedCourse: courses,
-      password
-    } = formData;
-
+    const { email, password, firstname, lastname, username } = formData;
     const newStudent = {
+      ...data,
+      email,
       firstname,
       lastname,
       username,
-      email,
-      level,
-      department,
-      courses,
+      courses: selectedCourse,
     };
-
-    signup({email, password})
-    console.log(newStudent);
-    
+    signup({ email, password, newStudent });
   }
   return (
     <div class="mt-5 mx-auto px-2 w-100 h-[90vh] flex flex-col">
@@ -243,9 +224,9 @@ function SignupFormB({ setFormData, formData }) {
 
         <div class="text-center my-3">
           <button
-            class="py-3 px-8 text-xs font-700 bg-[#f1f1f1] rounded-lg cursor-pointer"
+            class="py-3 px-8 text-xs font-700 bg-[#f1f1f1] rounded-lg cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed"
             type="submit"
-            disabled={isLoading}
+            disabled={isLoading }
           >
             Submit
           </button>

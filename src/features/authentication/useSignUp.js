@@ -9,8 +9,8 @@ export function useSignup() {
     isPending,
     error,
   } = useMutation({
-    mutationFn: ({ email, password, firstName, lastName }) =>
-      signupApi({ email, password, firstName, lastName }),
+    mutationFn: ({ email, password, newStudent }) =>
+      signupApi({ email, password, newStudent}),
     onSuccess: (user) => {
       console.log(user);
       toast.success("Account created successfully");
