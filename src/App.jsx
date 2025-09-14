@@ -6,24 +6,39 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import Signup from "./pages/Signup";
 import WelcomePage from "./pages/WelcomePage";
+import AppLayout from "./ui/AppLayout";
+import Profiles from "./pages/Profiles";
+import ProtectedRoute from "./ui/ProtectedRoute";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: 0
-      }
-    }
+        staleTime: 0,
+      },
+    },
   });
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <BrowserRouter>
         <Routes>
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <AppLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<Dashboard />} />
+            <Route path="profiles" element={<Profiles />} />
+          </Route>
           <Route path="/" element={<Home />} />
           <Route path="signin" element={<SignIn />} />
           <Route path="signup" element={<Signup />} />
-          <Route path="/welcome" element={<WelcomePage />} />
+          <Route path="welcome" element={<WelcomePage />} />
         </Routes>
       </BrowserRouter>
       <Toaster
