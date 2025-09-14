@@ -10,9 +10,9 @@ export function useSignin() {
     error,
   } = useMutation({
     mutationFn: ({ email, password }) => signinApi({ email, password }),
-    onSuccess: (data) => {
-      console.log(data);
-      navigate("/welcome");
+    onSuccess: () => {
+      toast.success('Login successful')
+      navigate("/dashboard");
     },
     onError: (err) => {
       console.log("Error", err);

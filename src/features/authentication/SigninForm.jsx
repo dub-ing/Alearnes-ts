@@ -10,8 +10,10 @@ function SigninForm() {
   function handleSubmit(event) {
     event.preventDefault();
     if (!email || !password) return;
-    signin({ email, password });
-    console.log(email, password);
+    signin({ email, password }, {onSettled: ()=>{
+      setEmail('')
+      setPassword('')
+    }});
   }
 
   return (
@@ -32,7 +34,7 @@ function SigninForm() {
               }}
               disabled={isLoading}
               class={`w-full outline-0 border focus:border-b-purple-deep ${
-                error ? "border-red-500" : "border-[#f1f1f1]"
+                error ? "border-b-red-500" : "border-[#f1f1f1]"
               } h-10 rounded-lg my-1 py-2 px-2`}
             />
           </div>
@@ -49,7 +51,7 @@ function SigninForm() {
               }}
               disabled={isLoading}
               class={`w-full outline-0 border focus:border-b-purple-deep ${
-                error ? "border-red-500" : "border-[#f1f1f1]"
+                error ? "border-b-red-500" : "border-[#f1f1f1]"
               } h-10 rounded-lg my-1 py-2 px-2`}
             />
           </div>
