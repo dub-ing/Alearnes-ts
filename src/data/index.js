@@ -17,7 +17,11 @@ import callIcon from './images/callIcon.png'
 import kenny from './images/kenny.png'
 import ayomide from './images/ayomide.png'
 import chioma from './images/chioma.png'
-
+import dashboardEclipse from './images/dashboardEclipse.png'
+import wavingEmoji from './images/wavingEmoji.png'
+import courseIcon from './images/courseIcon.png'
+import completedIcon from './images/completedIcon.png'
+import knowledgePointsIcon from './images/knowledgePointsIcons.png'
 export {
   logo,
   logoDark,
@@ -33,7 +37,12 @@ export {
   whatsappIcon,
   instagramIcon,
   telegramIcon,
-  callIcon
+  callIcon,
+  dashboardEclipse,
+  wavingEmoji,
+  courseIcon,
+  completedIcon,
+  knowledgePointsIcon
 };
 export const infographics = [
   {
