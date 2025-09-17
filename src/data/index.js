@@ -22,6 +22,8 @@ import wavingEmoji from './images/wavingEmoji.png'
 import courseIcon from './images/courseIcon.png'
 import completedIcon from './images/completedIcon.png'
 import knowledgePointsIcon from './images/knowledgePointsIcons.png'
+import profileImg from './images/profileImg.png'
+import editPen from './images/editPen.png'
 export {
   logo,
   logoDark,
@@ -42,7 +44,9 @@ export {
   wavingEmoji,
   courseIcon,
   completedIcon,
-  knowledgePointsIcon
+  knowledgePointsIcon,
+  profileImg,
+  editPen
 };
 export const infographics = [
   {
