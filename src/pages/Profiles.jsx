@@ -1,9 +1,9 @@
+import StudentProfile from '../ui/StudentProfile'
+
 function Profiles() {
-    return (
-        <div>
-            hello user
-        </div>
-    )
+  return (
+    <StudentProfile />
+  );
 }
 
-export default Profiles
+export default Profiles;

@@ -25,14 +25,14 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path="/dashboard"
+            path="/"
             element={
               <ProtectedRoute>
                 <AppLayout />
               </ProtectedRoute>
             }
           >
-            <Route index element={<Dashboard />} />
+            <Route index path="dashboard" element={<Dashboard />} />
             <Route path="profiles" element={<Profiles />} />
           </Route>
           <Route path="/" element={<Home />} />
