@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSignin } from "./useSignin";
 import Title from "../../ui/Title";
+import Spinner from "../../ui/Spinner";
 
 function SigninForm() {
   const [email, setEmail] = useState("mrKrabs");
@@ -15,6 +16,8 @@ function SigninForm() {
       setPassword('')
     }});
   }
+
+  if(isLoading) return <Spinner />
 
   return (
     <div class="mt-5 mx-auto px-2 w-100 h-[60vh] flex flex-col">

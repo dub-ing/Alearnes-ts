@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
 function Hero() {
+  const navigate = useNavigate()
+  function handleClick() {
+    navigate('/signup')
+  }
     return (
       <div class="py-18 px-4 flex flex-col items-center text-center font-raleway relative">
         <div class="relative w-full md:max-w-[50%]">
@@ -14,7 +19,7 @@ function Hero() {
           Increase the chances of getting an A in your courses. Having a better
           CGPA and achieving it like it"s nothing
         </p>
-        <Button color='bg-white' label='Get Started'/>
+        <Button color='bg-white' label='Get Started' onClick={handleClick} />
         <div class='absolute w-5 h-9 rounded-t-sm bg-yellow bottom-0 left-4'></div>
       </div>
     );

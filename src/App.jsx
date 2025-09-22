@@ -35,7 +35,7 @@ function App() {
             <Route index path="dashboard" element={<Dashboard />} />
             <Route path="profiles" element={<Profiles />} />
           </Route>
-          <Route path="/" element={<Home />} />
+          <Route path="home" element={<Home />} />
           <Route path="signin" element={<SignIn />} />
           <Route path="signup" element={<Signup />} />
           <Route path="welcome" element={<WelcomePage />} />
