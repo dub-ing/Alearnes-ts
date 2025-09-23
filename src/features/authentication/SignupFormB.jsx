@@ -3,6 +3,7 @@ import Title from "../../ui/Title";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useSignup } from "./useSignUp";
+import Spinner from "../../ui/Spinner";
 
 function SignupFormB({ formData }) {
   const [selectedCourse, setSelectedCourse] = useState([]);
@@ -30,12 +31,15 @@ function SignupFormB({ formData }) {
     };
     signup({ email, password, newStudent });
   }
+
+  if(isLoading) return <Spinner />
+  
   return (
-    <div class="mt-5 mx-auto px-2 w-100 h-[90vh] flex flex-col">
+    <div class="mt-5 mx-auto px-2 w-100 flex flex-col">
       <Title>Sign Up</Title>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        class="flex flex-col w-full h-full gap-5 mt-6"
+        class="flex flex-col w-full h-full gap-4 mt-6"
       >
         <div class="flex flex-col">
           <label htmlFor="department">Department</label>

@@ -1,13 +1,14 @@
 import { editPen, profileImg } from "../data";
 import { useProfile } from "../features/authentication/useProfile";
 import Title from "../ui/Title";
+import Spinner from "./Spinner";
 
 function Profiles() {
-  const { profile } = useProfile();
+  const { isLoading, profile } = useProfile();
   const { firstname, lastname, level, email, username, courses } =
     profile.user_metadata;
     const completedCourse = courses.length - 1
-
+  if(isLoading) return <Spinner />
   return (
     <div>
       <Title>Profile</Title>

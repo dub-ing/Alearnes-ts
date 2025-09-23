@@ -33,3 +33,26 @@ export async function getCurrentUser() {
   if (error) throw new Error(error.message);
   return data?.user;
 }
+
+// Forget password
+export async function forgetPassword(email) {
+  console.log(email);
+
+  let { data, error } = await supabase.auth.resetPasswordForEmail(email);
+  console.log(data, error);
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+// Reset password and update user
+export async function resetPassword(password) {
+  console.log(password);
+  
+  let updateUserInfo;
+  if (password) updateUserInfo = { password };
+  const { data, error } = await supabase.auth.updateUser(updateUserInfo);
+  console.log(data, error);
+
+  if (error) throw new Error(error.message);
+  return data;
+}

@@ -14,16 +14,16 @@ function SignupForm({ setFormData, formData, setShowForm }) {
   }
 
   return (
-    <div class="mt-5 mx-auto px-2 w-100 h-[90vh] flex flex-col">
+    <div class="mt-5 mx-auto px-2 w-100 flex flex-col">
       <Title>Sign Up</Title>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        class="flex flex-col w-full h-full gap-5 mt-6"
+        class="flex flex-col w-full h-full gap-4 mt-6"
       >
-        <FormInput label="First Name" error={errors.firstName}>
+        <FormInput label="First Name" error={errors.firstname}>
           <input
             class={`w-full outline-0 bg-[#fafafa] border  border-[#f1f1f1] h-10 rounded-lg my-1 py-2 px-2 ${
-              errors?.firstName
+              errors?.firstname
                 ? "border-b-red-500"
                 : "focus:border-b-purple-deep border-[#f1f1f1]"
             }`}
@@ -32,10 +32,10 @@ function SignupForm({ setFormData, formData, setShowForm }) {
             {...register("firstname", { required: "This field is required" })}
           />
         </FormInput>
-        <FormInput label="Last Name" error={errors.lastName}>
+        <FormInput label="Last Name" error={errors.lastname}>
           <input
             class={`w-full outline-0 bg-[#fafafa] border  border-[#f1f1f1] h-10 rounded-lg my-1 py-2 px-2 ${
-              errors?.lastName
+              errors?.lastname
                 ? "border-b-red-500"
                 : "focus:border-b-purple-deep border-[#f1f1f1]"
             }`}

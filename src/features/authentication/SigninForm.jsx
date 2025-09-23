@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useSignin } from "./useSignin";
 import Title from "../../ui/Title";
+import Spinner from "../../ui/Spinner";
+import { Link } from "react-router-dom";
 
 function SigninForm() {
   const [email, setEmail] = useState("mrKrabs");
@@ -15,6 +17,8 @@ function SigninForm() {
       setPassword('')
     }});
   }
+
+  if(isLoading) return <Spinner />
 
   return (
     <div class="mt-5 mx-auto px-2 w-100 h-[60vh] flex flex-col">
@@ -55,9 +59,9 @@ function SigninForm() {
               } h-10 rounded-lg my-1 py-2 px-2`}
             />
           </div>
-          <span class="float-right text-xs text-purple-deep font-500">
-            Forgot Password ?
-          </span>
+          <Link to='/forgetpassword' class="float-right text-xs text-purple-deep font-500">
+            Forget Password ?
+          </Link>
         </div>
         <div class="text-center">
           <button

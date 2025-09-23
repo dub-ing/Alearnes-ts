@@ -10,6 +10,8 @@ import AppLayout from "./ui/AppLayout";
 import Profiles from "./pages/Profiles";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import Dashboard from "./pages/Dashboard";
+import ForgetPassword from "./pages/ForgetPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   const queryClient = new QueryClient({
@@ -35,9 +37,11 @@ function App() {
             <Route index path="dashboard" element={<Dashboard />} />
             <Route path="profiles" element={<Profiles />} />
           </Route>
-          <Route path="/" element={<Home />} />
+          <Route path="home" element={<Home />} />
           <Route path="signin" element={<SignIn />} />
           <Route path="signup" element={<Signup />} />
+          <Route path="forgetpassword" element={<ForgetPassword />} />
+          <Route path="resetpassword" element={<ResetPassword />} />
           <Route path="welcome" element={<WelcomePage />} />
         </Routes>
       </BrowserRouter>

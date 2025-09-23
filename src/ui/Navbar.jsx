@@ -9,10 +9,13 @@ import {
 } from "react-icons/md";
 import { logoDark } from "../data/index";
 import Button from "./Button";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
   function handleMenu() {
-    setShowMenu((menu) => !menu)
+    setShowMenu((menu) => !menu);
   }
   return (
     <div>
@@ -29,15 +32,36 @@ function Navbar() {
             <a href="#blog">Blog</a>
           </li>
         </ul>
-        <div class='flex gap-4'>
-          <Button label="Login" color='text-white' />
-          <Button label="Get Started" color='bg-white' />
+        <div class="flex gap-4">
+          <Button
+            label="Login"
+            onClick={() => navigate("/signin")}
+            color="text-white"
+          />
+          <Button
+            label="Get Started"
+            onClick={() => navigate("/signup")}
+            color="bg-white"
+          />
         </div>
       </div>
       {/* mobile nav menu */}
       <div class="flex justify-between items-center py-4 px-5 sm:hidden">
         <img src={logoDark} alt="Alearners logo" width={60} />
-        <HiOutlineMenu size={24} color="#f1f1f1" onClick={handleMenu} />
+        <div class="flex gap-4 items-center">
+          {pathname === "/signup" || pathname === '/forgetpassword' && (
+            <Link to="/signin" class="text-xs">
+              Login
+            </Link>
+          )}
+          {pathname === "/signup" && (
+            <Link to="/signup" class="text-xs">
+              Get Started
+            </Link>
+          )}
+
+          <HiOutlineMenu size={24} color="#000" onClick={handleMenu} />
+        </div>
       </div>
       {showMenu && (
         <div class="w-[95%] top-0 bottom-0 right-0 bg-purple-deep absolute z-10 px-3.5 py-3.5 flex flex-col gap-6 sm:hidden">
