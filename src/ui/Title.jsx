@@ -5,7 +5,7 @@ function Title({ children }) {
   const { pathname } = useLocation();
   return (
     <div class="flex items-center justify-between">
-      <h1 class="text-3xl w-1/2 font-700 leading-7 text-[#0f0f0f">
+      <h1 class={`text-3xl ${pathname !== '/signup' ? 'w-full' : 'w-1/2'} font-700 leading-7 text-[#0f0f0f`}>
         {children}
       </h1>
       {pathname === "signup" && (

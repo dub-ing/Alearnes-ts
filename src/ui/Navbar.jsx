@@ -49,13 +49,17 @@ function Navbar() {
       <div class="flex justify-between items-center py-4 px-5 sm:hidden">
         <img src={logoDark} alt="Alearners logo" width={60} />
         <div class="flex gap-4 items-center">
-          {pathname === "/signup" ? (
+          {pathname === "/signup" || pathname === '/forgetpassword' && (
             <Link to="/signin" class="text-xs">
               Login
             </Link>
-          ) : (
-            <Link to="/signup" class="text-xs">Get Started</Link>
           )}
+          {pathname === "/signup" && (
+            <Link to="/signup" class="text-xs">
+              Get Started
+            </Link>
+          )}
+
           <HiOutlineMenu size={24} color="#000" onClick={handleMenu} />
         </div>
       </div>
